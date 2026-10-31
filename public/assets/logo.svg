@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant Brand Red Background -->
+    <clipPath id="circle-clip">
+      <circle cx="256" cy="256" r="220" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Rounded Red Background -->
+  <rect width="512" height="512" rx="100" fill="#D6181F" />
+
+  <!-- Electric Yellow Sunburst Disc -->
+  <circle cx="256" cy="256" r="176" fill="#FFDE00" />
+
+  <!-- Clip inner contents to yellow circle -->
+  <g clip-path="url(#circle-clip)">
+    <!-- 1. Deep 2.5D Black Diagonal Shadow -->
+    <path d="M 230 115 
+             L 100 330 
+             L 165 440 
+             L 330 435 
+             L 300 240 
+             L 245 110 Z" 
+          fill="#0C0A09" opacity="0.95" />
+
+    <!-- Additional hand shadow extension -->
+    <path d="M 270 120 L 140 340 L 195 445 L 340 435 L 310 240 Z" fill="#0C0A09" opacity="0.95" />
+
+    <!-- 2. Pure White Hand Outline Underlay -->
+    <g stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="#FFFFFF">
+      <!-- Index Finger -->
+      <path d="M 245 140 C 245 110, 275 110, 275 140 L 275 250 C 275 260, 255 260, 245 250 Z" />
+      <!-- Middle Finger -->
+      <path d="M 285 150 C 285 120, 315 120, 315 150 L 315 255 C 315 265, 295 265, 285 255 Z" />
+      <!-- Palm, Thumb & Base -->
+      <path d="M 235 250 
+               C 215 250, 205 270, 220 290 
+               C 225 295, 245 305, 275 305 
+               L 310 305 
+               C 340 305, 360 285, 355 255 
+               C 350 230, 335 230, 320 250 
+               L 320 360 
+               C 320 390, 240 390, 235 360 
+               L 235 250 Z" />
+    </g>
+
+    <!-- 3. Red Peace Hand Core (✌️) -->
+    <g fill="#D6181F" stroke="#D6181F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Index Finger (Straight Up) -->
+      <rect x="250" y="135" width="26" height="130" rx="13" />
+      
+      <!-- Middle Finger (Angled slightly to the right in V shape) -->
+      <rect x="286" y="145" width="26" height="125" rx="13" transform="rotate(12 299 207)" />
+
+      <!-- Folded Ring Finger -->
+      <rect x="306" y="248" width="28" height="42" rx="14" />
+      
+      <!-- Folded Pinky Finger -->
+      <rect x="324" y="260" width="26" height="40" rx="13" />
+
+      <!-- Thumb (curving across the folded fingers) -->
+      <path d="M 232 268 
+               C 228 255, 240 248, 255 252 
+               C 275 258, 298 268, 305 285 
+               C 310 298, 298 310, 282 305 
+               C 260 298, 242 288, 232 268 Z" />
+
+      <!-- Hand Palm & Wrist Base -->
+      <path d="M 238 275 
+               L 238 355 
+               C 238 385, 332 385, 332 355 
+               L 332 290 
+               C 315 295, 270 295, 238 275 Z" />
+    </g>
+
+    <!-- Inner Hand Creases & Details (White Accents) -->
+    <path d="M 252 265 C 265 272, 285 278, 298 280" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M 276 210 L 276 250" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M 312 215 L 305 250" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6" />
+  </g>
+
+  <!-- Crisp Inner Rim Glow -->
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.4" />
+</svg>

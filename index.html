@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Yolla Pizza | New York Style Pizza & Burger</title>
+    <meta name="description" content="Authentic New York style pizza, juicy smash burgers & crispy chicken strips in Namangan. Quick booking, direct hotline & delivery." />
+    
+    <!-- Open Graph & Brand Icons -->
+    <meta property="og:title" content="Yolla Pizza · New York Style Pizza & Burger" />
+    <meta property="og:description" content="5A/6 mikr-on, Namangan · 10:00 - 01:00 Daily · Telegram Bot & Phone Orders" />
+    <meta property="og:image" content="/assets/logo.svg" />
+    <meta name="theme-color" content="#0c0a09" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="apple-touch-icon" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Full-Screen Living 3D Pizza Canvas (Fixed Background) -->
+    <div id="bg-3d-canvas"></div>
+    <div class="ambient-glow"></div>
+
+    <main class="app-viewport">
+      <!-- 0. Top Bar with Centered Language Switcher -->
+      <div class="top-nav-bar">
+        <div class="lang-switcher-pill" aria-label="Language Switcher">
+          <button class="lang-btn active" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <!-- 1. Brand Header -->
+      <header class="brand-header">
+        <div class="logo-avatar-wrap" id="logo-trigger" title="Yolla Peace & Flavor">
+          <img src="/assets/logo.svg" alt="Yolla Pizza Logo" class="logo-avatar" />
+        </div>
+        
+        <div class="brand-text-block">
+          <h1 class="brand-title">YOLLA PIZZA</h1>
+          <p class="brand-subtitle" data-i18n="brandSubtitle">
+            NEW YORK USLUBIDAGI PITSA VA BURGERLAR
+          </p>
+        </div>
+
+        <div class="status-pill" id="live-status-pill">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Checking Kitchen Status...</span>
+        </div>
+      </header>
+
+      <!-- 2. Interactive 3D Pizza Showcase (Dynamic Scroll-Linked Stage) -->
+      <section class="hero-3d-stage" aria-label="Interactive 3D Pizza">
+        <div class="hero-3d-touch-zone" id="hero-3d-touch-zone" title="Touch & Drag to Inspect"></div>
+        <div class="stage-hint">
+          <i data-lucide="hand"></i> <span data-i18n="hint3D">3D ko'rish uchun suring</span>
+        </div>
+
+        <div class="stage-controls-overlay">
+          <button class="stage-btn" id="btn-spin" title="Spin Pizza 360 Degrees">
+            <i data-lucide="rotate-cw" style="width: 13px; height: 13px;"></i> <span data-i18n="btnSpin">360° Aylanish</span>
+          </button>
+          <button class="stage-btn" id="btn-top" title="Top Down View">
+            <i data-lucide="eye" style="width: 13px; height: 13px;"></i> <span data-i18n="btnTop">Tepadan ko'rish</span>
+          </button>
+          <button class="stage-btn" id="btn-steam" title="Toggle Hot Steam">
+            <i data-lucide="flame" style="width: 13px; height: 13px;"></i> <span data-i18n="btnSteam">Qaynoq bug'</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 3. High-Priority Dual Action Buttons -->
+      <section class="hero-actions-grid" aria-label="Main Booking and Order Actions">
+        <!-- Telegram Bot Booking Button (Primary Fiery Gradient) -->
+        <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="action-btn-primary" id="btn-tg-primary">
+          <div class="action-btn-content">
+            <div class="action-icon-circle yellow">
+              <i data-lucide="send" style="width: 20px; height: 20px;"></i>
+            </div>
+            <div class="action-text">
+              <div class="action-label" data-i18n="btnTgPrimary">TELEGRAM BOTDA BUYURTMA</div>
+              <div class="action-sublabel" data-i18n="btnTgSub">@birzoombot · Qulay menyu va tezkor yetkazish</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="action-arrow"></i>
+        </a>
+
+        <!-- Direct Phone Call Button (Liquid Glass) -->
+        <a href="tel:+998692395100" class="action-btn-secondary" id="btn-call-primary">
+          <div class="action-btn-content">
+            <div class="action-icon-circle">
+              <i data-lucide="phone-call" style="width: 20px; height: 20px;"></i>
+            </div>
+            <div class="action-text">
+              <div class="action-label" data-i18n="btnCallPrimary">QO'NG'IROQ QILISH</div>
+              <div class="action-sublabel" data-i18n="btnCallSub">69 239 5100 · Oshxona qaynoq aloqasi</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="action-arrow"></i>
+        </a>
+      </section>
+
+      <!-- 4. Bento Grid Stack -->
+      <section class="bento-grid">
+        <!-- Socials Grid: Instagram & Telegram Channel -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <!-- Instagram Card -->
+          <a href="https://www.instagram.com/yollapizza/#" target="_blank" rel="noopener noreferrer" class="glass-card card-insta" style="flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+              <div class="insta-icon-badge">
+                <i data-lucide="instagram" style="width: 22px; height: 22px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="action-arrow" style="width: 16px; height: 16px;"></i>
+            </div>
+            <div class="action-text">
+              <div class="action-label" style="font-size: 0.88rem;" data-i18n="instaLabel">INSTAGRAM</div>
+              <div class="action-sublabel" style="font-size: 0.7rem;" data-i18n="instaSub">@yollapizza · Stories va videolar</div>
+            </div>
+          </a>
+
+          <!-- Telegram Channel Card -->
+          <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="glass-card card-insta" style="flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+              <div class="insta-icon-badge" style="background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);">
+                <i data-lucide="send" style="width: 20px; height: 20px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="action-arrow" style="width: 16px; height: 16px;"></i>
+            </div>
+            <div class="action-text">
+              <div class="action-label" style="font-size: 0.88rem;" data-i18n="tgLabel">TELEGRAM</div>
+              <div class="action-sublabel" style="font-size: 0.7rem;" data-i18n="tgSub">Kanal va aksiyalar</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Location & Interactive Navigator Card -->
+        <div class="glass-card card-location">
+          <div class="location-header">
+            <div class="location-icon-box">
+              <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
+            </div>
+            <div class="location-meta">
+              <span class="location-title" data-i18n="locTitle">Bizning manzil</span>
+              <span class="location-address" data-i18n="locAddress">5A/6 mikr-on, Namangan, O'zbekiston</span>
+            </div>
+          </div>
+          <div class="location-actions-row">
+            <button class="loc-btn" id="btn-copy-address">
+              <i data-lucide="copy" style="width: 14px; height: 14px;"></i> <span data-i18n="btnCopy">Nusxalash</span>
+            </button>
+            <a href="https://maps.google.com/?q=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="loc-btn">
+              <i data-lucide="navigation" style="width: 14px; height: 14px;"></i> Google
+            </a>
+            <a href="https://yandex.com/maps/?text=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="loc-btn">
+              <i data-lucide="map" style="width: 14px; height: 14px;"></i> Yandex
+            </a>
+          </div>
+        </div>
+
+        <!-- Signature Menu Showcase (Cleaned Real Photography & Localized Tabs) -->
+        <div class="glass-card card-menu-showcase">
+          <div class="section-title-row">
+            <div class="section-heading">
+              <i data-lucide="sparkles" style="width: 18px; height: 18px; color: var(--brand-yellow);"></i>
+              <span data-i18n="specialsHeading">Mashhur taomlar</span>
+            </div>
+            <span class="section-tag" data-i18n="specialsTag">Har kuni yangi</span>
+          </div>
+
+          <div class="menu-tabs-nav" id="menu-tabs">
+            <button class="menu-tab-chip active" data-item="pepperoni" data-i18n="tabPepperoni">Pepperoni pitsa</button>
+            <button class="menu-tab-chip" data-item="burger" data-i18n="tabBurger">Smash Burger</button>
+            <button class="menu-tab-chip" data-item="strips" data-i18n="tabStrips">Tovuq stripslari</button>
+            <button class="menu-tab-chip" data-item="cheesepull" data-i18n="tabCheesepull">Pishloqli pitsa</button>
+          </div>
+
+          <div class="menu-item-display" id="menu-display-card">
+            <div class="menu-image-frame">
+              <img id="menu-img" src="/assets/pizza-pepperoni.jpg" alt="Pepperoni Pizza" class="menu-img" />
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-name" id="menu-title">New York Pepperoni pitsa</div>
+              <div class="menu-item-desc" id="menu-desc">Qisirlovchi mol go'shti pepperonisi, erigan mozzarella pishlog'i va yog'och pechda pishirilgan xushbo'y pomidor sousli xamir.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Hours & Schedule Card -->
+        <div class="glass-card card-schedule">
+          <div class="section-title-row">
+            <div class="section-heading">
+              <i data-lucide="clock" style="width: 18px; height: 18px; color: var(--brand-yellow);"></i>
+              <span data-i18n="hoursHeading">Ish tartibi</span>
+            </div>
+            <span class="section-tag" id="badge-open-state" data-i18n="hoursTag">Har kuni</span>
+          </div>
+          
+          <div class="schedule-row">
+            <span class="schedule-day" data-i18n="hoursDays">Dushanba – Yakshanba</span>
+            <span class="schedule-time" data-i18n="hoursTime">10:00 – 01:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-day" data-i18n="hoursDelivery">Yetkazib berish xizmati</span>
+            <span class="schedule-time" data-i18n="hoursDeliveryTime">01:00 gacha uzluksiz</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Designed Footer -->
+      <footer class="brand-footer">
+        <div class="brand-footer-name" data-i18n="footerName">YOLLA PIZZA · EST. NAMANGAN</div>
+        <p data-i18n="footerDesc">New York uslubidagi pitsa, burgerlar va mazali taomlar</p>
+      </footer>
+    </main>
+
+    <!-- 6. Sticky Bottom Quick Bar -->
+    <nav class="sticky-quick-bar" aria-label="Quick Actions">
+      <a href="tel:+998692395100" class="quick-bar-btn" title="Call Pizza Bar">
+        <i data-lucide="phone" style="width: 19px; height: 19px;"></i>
+        <span data-i18n="barCall">Qo'ng'iroq</span>
+      </a>
+      <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="quick-bar-btn prominent" title="Telegram Bot">
+        <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+        <span data-i18n="barBot">Buyurtma</span>
+      </a>
+      <a href="https://maps.google.com/?q=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="quick-bar-btn" title="Directions">
+        <i data-lucide="map-pin" style="width: 19px; height: 19px;"></i>
+        <span data-i18n="barMap">Xarita</span>
+      </a>
+      <a href="https://www.instagram.com/yollapizza/#" target="_blank" rel="noopener noreferrer" class="quick-bar-btn" title="Instagram">
+        <i data-lucide="instagram" style="width: 19px; height: 19px;"></i>
+        <span data-i18n="barInsta">Insta</span>
+      </a>
+      <button class="quick-bar-btn" id="btn-spin-bar" title="Spin 3D Pizza">
+        <i data-lucide="pizza" style="width: 19px; height: 19px;"></i>
+        <span data-i18n="bar3D">3D Pitsa</span>
+      </button>
+    </nav>
+
+    <!-- 7. Toast Notification -->
+    <div id="toast" class="toast-notice">
+      <i data-lucide="check-circle" style="width: 16px; height: 16px; color: var(--brand-yellow);"></i>
+      <span id="toast-text">Manzil nusxalandi!</span>
+    </div>
+
+    <!-- Main Logic Script -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
