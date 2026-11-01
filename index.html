@@ -1,249 +1,395 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>Yolla Pizza | New York Style Pizza & Burger</title>
-    <meta name="description" content="Authentic New York style pizza, juicy smash burgers & crispy chicken strips in Namangan. Quick booking, direct hotline & delivery." />
-    
-    <!-- Open Graph & Brand Icons -->
-    <meta property="og:title" content="Yolla Pizza · New York Style Pizza & Burger" />
-    <meta property="og:description" content="5A/6 mikr-on, Namangan · 10:00 - 01:00 Daily · Telegram Bot & Phone Orders" />
-    <meta property="og:image" content="/assets/logo.jpg" />
-    <meta name="theme-color" content="#0c0a09" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.jpg" />
-    <link rel="apple-touch-icon" href="/assets/logo.jpg" />
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body>
-    <!-- Full-Screen Living 3D Pizza Canvas (Fixed Background) -->
-    <div id="bg-3d-canvas"></div>
-    <div class="ambient-glow"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Yolla Pizza | New York Style Pizzeria & Burgers in Namangan</title>
+  <meta name="description" content="Yolla Pizza Namangan. Haqiqiy New York uslubidagi pitsa va smash burgerlar. Telegram orqali buyurtma: @birzoombot. Telefon: 69 239 5100. Manzil: 5A/6 mikr-on." />
+  <meta name="theme-color" content="#0a0908" />
 
-    <main class="app-viewport">
-      <!-- 0. Top Bar with Centered Language Switcher -->
-      <div class="top-nav-bar">
-        <div class="lang-switcher-pill" aria-label="Language Switcher">
-          <button class="lang-btn active" data-lang="uz">UZ</button>
-          <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+  <!-- Google Fonts: Space Grotesk (Display) & Plus Jakarta Sans (Body) & JetBrains Mono (Technical) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/jpeg" href="/assets/yolla-logo.jpg" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Top Utility Bar: Live Status + Discreet Language Switcher -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="live-indicator" id="status-badge" aria-live="polite">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-label" id="status-text" data-i18n="status_open">Ochiq · 01:00 gacha</span>
+      </div>
+
+      <nav class="lang-nav" aria-label="Language selection">
+        <button type="button" class="lang-btn active" data-lang="uz">UZ</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+
+    <!-- 1. Full-Bleed Photographic Hero Header -->
+    <section class="hero-header">
+      <div class="hero-media-wrap">
+        <img
+          src="/assets/hero-pizza.jpg"
+          alt="Yolla Pizza New York Style Pepperoni Cheese Pull"
+          class="hero-photo"
+          fetchpriority="high"
+        />
+        <div class="hero-scrim"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="brand-identity">
+          <img
+            src="/assets/yolla-logo.jpg"
+            alt="Yolla Pizza emblem"
+            class="brand-mark"
+            width="56"
+            height="56"
+          />
+          <div class="brand-meta">
+            <span class="brand-coords">NAMANGAN · 5A/6 MIKR-ON</span>
+            <h1 class="brand-title">YOLLA PIZZA</h1>
+          </div>
+        </div>
+
+        <p class="hero-headline" data-i18n="hero_headline">
+          Haqiqiy New York uslubidagi qarsildoq pitsa va shirali smash burgerlar.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Primary Conversion Hub (Linktree Architecture) -->
+    <section class="links-section" id="primary-links" aria-label="Primary actions" data-reveal>
+      <div class="section-header">
+        <span class="section-index">01</span>
+        <h2 class="section-title" data-i18n="sec_links">Tezkor aloqa va buyurtma</h2>
+      </div>
+
+      <div class="action-stack">
+        <!-- Primary Action: Telegram Bot -->
+        <a
+          href="https://t.me/birzoombot"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="action-row action-row-primary"
+        >
+          <div class="action-left">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+            </span>
+            <div class="action-text">
+              <span class="action-name" data-i18n="act_tg_title">Telegram Bot orqali buyurtma</span>
+              <span class="action-sub" data-i18n="act_tg_sub">@birzoombot · Yetkazib berish va olib ketish</span>
+            </div>
+          </div>
+          <span class="action-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Secondary Action: Direct Kitchen Hotline -->
+        <a href="tel:+998692395100" class="action-row">
+          <div class="action-left">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <div class="action-text">
+              <span class="action-name" data-i18n="act_call_title">Qo'ng'iroq qilish</span>
+              <span class="action-sub mono-num">69 239 5100 · <span data-i18n="act_call_sub">Oshxona qaynoq aloqasi</span></span>
+            </div>
+          </div>
+          <span class="action-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Action: Instagram Community -->
+        <a
+          href="https://www.instagram.com/yollapizza/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="action-row"
+        >
+          <div class="action-left">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </span>
+            <div class="action-text">
+              <span class="action-name">Instagram</span>
+              <span class="action-sub" data-i18n="act_ig_sub">@yollapizza · Yangiliklar va jonli jarayon</span>
+            </div>
+          </div>
+          <span class="action-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Action: Location Jump -->
+        <a href="#location-section" class="action-row">
+          <div class="action-left">
+            <span class="action-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div class="action-text">
+              <span class="action-name" data-i18n="act_loc_title">Manzil va Xarita</span>
+              <span class="action-sub" data-i18n="act_loc_sub">5A/6 mikr-on, Namangan · Mo'ljal va yo'nalish</span>
+            </div>
+          </div>
+          <span class="action-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14"/>
+              <path d="m19 12-7 7-7-7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. What We Serve (Compact Signature Showcase - Not a Full Menu) -->
+    <section class="showcase-section" aria-label="What we serve" data-reveal>
+      <div class="section-header">
+        <span class="section-index">02</span>
+        <h2 class="section-title" data-i18n="sec_serve">Biz nima tayyorlaymiz</h2>
+      </div>
+
+      <p class="section-lead" data-i18n="serve_lead">
+        Katta va murakkab menyu o'rniga biz har kuni eng sara masalliqlardan to'rtta asosiy yo'nalishda mukammal ta'm yaratamiz.
+      </p>
+
+      <div class="signature-grid">
+        <!-- Item 1: NY Pizza -->
+        <article class="sig-item">
+          <div class="sig-media">
+            <img src="/assets/menu-pizza-slice.jpg" alt="New York Style Pizza" loading="lazy" />
+            <span class="sig-tag" data-i18n="tag_signature">Asosiy taom</span>
+          </div>
+          <div class="sig-body">
+            <h3 class="sig-title" data-i18n="food_1_title">New York Pitsa</h3>
+            <p class="sig-desc" data-i18n="food_1_desc">
+              Cho'ziluvchan mozzarella pishlog'i, mol go'shti pepperonisi va qarsildoq oltinrang xamir chetlari.
+            </p>
+          </div>
+        </article>
+
+        <!-- Item 2: Smash Burgers -->
+        <article class="sig-item">
+          <div class="sig-media">
+            <img src="/assets/menu-burger.jpg" alt="Double Smash Burger" loading="lazy" />
+            <span class="sig-tag" data-i18n="tag_fresh">100% Mol go'shti</span>
+          </div>
+          <div class="sig-body">
+            <h3 class="sig-title" data-i18n="food_2_title">Smash Burgerlar</h3>
+            <p class="sig-desc" data-i18n="food_2_desc">
+              Qizigan temir plitada bosib pishirilgan ikki qavatli shirali kotlet, erigan cheddar va maxsus sous.
+            </p>
+          </div>
+        </article>
+
+        <!-- Item 3: Crispy Sides & Strips -->
+        <article class="sig-item">
+          <div class="sig-media">
+            <img src="/assets/menu-fri.jpg" alt="Crispy Fries and Chicken Strips" loading="lazy" />
+          </div>
+          <div class="sig-body">
+            <h3 class="sig-title" data-i18n="food_3_title">Qarsildoq Fri va Stripslar</h3>
+            <p class="sig-desc" data-i18n="food_3_desc">
+              Tashqi tomoni oltinrang qarsildoq kartoshka fri hamda yumshoq tovuq filesidan issiq stripslar.
+            </p>
+          </div>
+        </article>
+
+        <!-- Item 4: Cold Drinks -->
+        <article class="sig-item">
+          <div class="sig-media">
+            <img src="/assets/menu-cola.jpg" alt="Ice Cold Drinks" loading="lazy" />
+          </div>
+          <div class="sig-body">
+            <h3 class="sig-title" data-i18n="food_4_title">Muzdek Ichimliklar</h3>
+            <p class="sig-desc" data-i18n="food_4_desc">
+              Issiq pitsa va burgerlar bilan ayni muddao bo'luvchi muzdek gazli va tetiklantiruvchi ichimliklar.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Craft & Philosophy Story -->
+    <section class="craft-section" aria-label="Our craft and quality" data-reveal>
+      <div class="section-header">
+        <span class="section-index">03</span>
+        <h2 class="section-title" data-i18n="sec_craft">Sifat va oshxona falsafasi</h2>
+      </div>
+
+      <div class="craft-list">
+        <div class="craft-row">
+          <span class="craft-num">48h</span>
+          <div class="craft-info">
+            <h3 class="craft-heading" data-i18n="craft_1_title">Sovuq fermentatsiyalangan xamir</h3>
+            <p class="craft-copy" data-i18n="craft_1_desc">
+              Xamirimiz 48 soat davomida yetiladi. Natijada ichi g'ovakli, yengil hazm bo'ladigan va cheti qarsildoq asos hosil bo'ladi.
+            </p>
+          </div>
+        </div>
+
+        <div class="craft-row">
+          <span class="craft-num">100%</span>
+          <div class="craft-info">
+            <h3 class="craft-heading" data-i18n="craft_2_title">Tabiiy Mozzarella va Halol go'sht</h3>
+            <p class="craft-copy" data-i18n="craft_2_desc">
+              Sun'iy o'rinbosarlarsiz toza pishloq, yangi maydalangan mol go'shti va xushbo'y pomidor sousidan foydalanamiz.
+            </p>
+          </div>
+        </div>
+
+        <div class="craft-row">
+          <span class="craft-num">350°</span>
+          <div class="craft-info">
+            <h3 class="craft-heading" data-i18n="craft_3_title">Yuqori haroratda pishirish</h3>
+            <p class="craft-copy" data-i18n="craft_3_desc">
+              Har bir buyurtma faqatgina siz murojaat qilganingizdan so'ng yuqori haroratli pechda yangi uzib chiqariladi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Location & Working Hours -->
+    <section class="location-section" id="location-section" aria-label="Location and hours" data-reveal>
+      <div class="section-header">
+        <span class="section-index">04</span>
+        <h2 class="section-title" data-i18n="sec_location">Manzil va ish vaqti</h2>
+      </div>
+
+      <div class="info-table">
+        <div class="info-row">
+          <span class="info-label" data-i18n="lbl_address">Manzil</span>
+          <div class="info-value-group">
+            <span class="info-value" data-i18n="val_address">Namangan sh., 5A/6 mikrorayon</span>
+            <button type="button" class="copy-btn" id="copy-address-btn">
+              <span id="copy-btn-text" data-i18n="btn_copy">Nusxalash</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label" data-i18n="lbl_hours">Ish tartibi</span>
+          <span class="info-value mono-num" data-i18n="val_hours">Har kuni · 10:00 dan 01:00 gacha</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label" data-i18n="lbl_delivery">Xizmat</span>
+          <span class="info-value" data-i18n="val_delivery">Zal, olib ketish va shahar bo'ylab yetkazish</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label" data-i18n="lbl_phone">Telefon</span>
+          <a href="tel:+998692395100" class="info-value info-link mono-num">+998 (69) 239-51-00</a>
         </div>
       </div>
 
-      <!-- 1. Brand Header -->
-      <header class="brand-header">
-        <div class="logo-avatar-wrap" id="logo-trigger" title="Yolla Peace & Flavor">
-          <img src="/assets/logo.jpg" alt="Yolla Pizza Logo" class="logo-avatar" />
-        </div>
-        
-        <div class="brand-text-block">
-          <h1 class="brand-title">YOLLA PIZZA</h1>
-          <p class="brand-subtitle" data-i18n="brandSubtitle">
-            NEW YORK USLUBIDAGI PITSA VA BURGERLAR
-          </p>
-        </div>
-
-        <div class="status-pill" id="live-status-pill">
-          <span class="status-dot" id="status-dot"></span>
-          <span id="status-text">Checking Kitchen Status...</span>
-        </div>
-      </header>
-
-      <!-- 2. Interactive 3D Pizza Showcase (Dynamic Scroll-Linked Stage) -->
-      <section class="hero-3d-stage" aria-label="Interactive 3D Pizza">
-        <div class="hero-3d-touch-zone" id="hero-3d-touch-zone" title="Touch & Drag to Inspect"></div>
-        <div class="stage-hint">
-          <i data-lucide="hand"></i> <span data-i18n="hint3D">3D ko'rish uchun suring</span>
-        </div>
-
-        <div class="stage-controls-overlay">
-          <button class="stage-btn" id="btn-spin" title="Spin Pizza 360 Degrees">
-            <i data-lucide="rotate-cw" style="width: 13px; height: 13px;"></i> <span data-i18n="btnSpin">360° Aylanish</span>
-          </button>
-          <button class="stage-btn" id="btn-top" title="Top Down View">
-            <i data-lucide="eye" style="width: 13px; height: 13px;"></i> <span data-i18n="btnTop">Tepadan ko'rish</span>
-          </button>
-          <button class="stage-btn" id="btn-steam" title="Toggle Hot Steam">
-            <i data-lucide="flame" style="width: 13px; height: 13px;"></i> <span data-i18n="btnSteam">Qaynoq bug'</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- 3. High-Priority Dual Action Buttons -->
-      <section class="hero-actions-grid" aria-label="Main Booking and Order Actions">
-        <!-- Telegram Bot Booking Button (Primary Fiery Gradient) -->
-        <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="action-btn-primary" id="btn-tg-primary">
-          <div class="action-btn-content">
-            <div class="action-icon-circle yellow">
-              <i data-lucide="send" style="width: 20px; height: 20px;"></i>
-            </div>
-            <div class="action-text">
-              <div class="action-label" data-i18n="btnTgPrimary">TELEGRAM BOTDA BUYURTMA</div>
-              <div class="action-sublabel" data-i18n="btnTgSub">@birzoombot · Qulay menyu va tezkor yetkazish</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-right" class="action-arrow"></i>
+      <div class="map-actions">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Yolla+Pizza+Namangan+5a+mikrorayon"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+            <line x1="9" x2="9" y1="3" y2="18"/>
+            <line x1="15" x2="15" y1="6" y2="21"/>
+          </svg>
+          <span data-i18n="btn_gmaps">Google Xarita</span>
         </a>
 
-        <!-- Direct Phone Call Button (Liquid Glass) -->
-        <a href="tel:+998692395100" class="action-btn-secondary" id="btn-call-primary">
-          <div class="action-btn-content">
-            <div class="action-icon-circle">
-              <i data-lucide="phone-call" style="width: 20px; height: 20px;"></i>
-            </div>
-            <div class="action-text">
-              <div class="action-label" data-i18n="btnCallPrimary">QO'NG'IROQ QILISH</div>
-              <div class="action-sublabel" data-i18n="btnCallSub">69 239 5100 · Oshxona qaynoq aloqasi</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-right" class="action-arrow"></i>
+        <a
+          href="https://yandex.uz/maps/?text=Namangan+5a+mikrorayon+Yolla+Pizza"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span data-i18n="btn_ymaps">Yandex Xarita</span>
         </a>
-      </section>
+      </div>
+    </section>
 
-      <!-- 4. Bento Grid Stack -->
-      <section class="bento-grid">
-        <!-- Socials Grid: Instagram & Telegram Channel -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-          <!-- Instagram Card -->
-          <a href="https://www.instagram.com/yollapizza/#" target="_blank" rel="noopener noreferrer" class="glass-card card-insta" style="flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-              <div class="insta-icon-badge">
-                <i data-lucide="instagram" style="width: 22px; height: 22px;"></i>
-              </div>
-              <i data-lucide="arrow-up-right" class="action-arrow" style="width: 16px; height: 16px;"></i>
-            </div>
-            <div class="action-text">
-              <div class="action-label" style="font-size: 0.88rem;" data-i18n="instaLabel">INSTAGRAM</div>
-              <div class="action-sublabel" style="font-size: 0.7rem;" data-i18n="instaSub">@yollapizza · Stories va videolar</div>
-            </div>
-          </a>
+    <!-- Editorial Footer -->
+    <footer class="site-footer">
+      <div class="footer-line">
+        <span class="footer-brand">YOLLA PIZZA · NAMANGAN</span>
+        <span class="footer-year">© 2026</span>
+      </div>
+    </footer>
 
-          <!-- Telegram Channel Card -->
-          <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="glass-card card-insta" style="flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-              <div class="insta-icon-badge" style="background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);">
-                <i data-lucide="send" style="width: 20px; height: 20px;"></i>
-              </div>
-              <i data-lucide="arrow-up-right" class="action-arrow" style="width: 16px; height: 16px;"></i>
-            </div>
-            <div class="action-text">
-              <div class="action-label" style="font-size: 0.88rem;" data-i18n="tgLabel">TELEGRAM</div>
-              <div class="action-sublabel" style="font-size: 0.7rem;" data-i18n="tgSub">Kanal va aksiyalar</div>
-            </div>
-          </a>
-        </div>
+  </main>
 
-        <!-- Location & Interactive Navigator Card -->
-        <div class="glass-card card-location">
-          <div class="location-header">
-            <div class="location-icon-box">
-              <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
-            </div>
-            <div class="location-meta">
-              <span class="location-title" data-i18n="locTitle">Bizning manzil</span>
-              <span class="location-address" data-i18n="locAddress">5A/6 mikr-on, Namangan, O'zbekiston</span>
-            </div>
-          </div>
-          <div class="location-actions-row">
-            <button class="loc-btn" id="btn-copy-address">
-              <i data-lucide="copy" style="width: 14px; height: 14px;"></i> <span data-i18n="btnCopy">Nusxalash</span>
-            </button>
-            <a href="https://maps.google.com/?q=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="loc-btn">
-              <i data-lucide="navigation" style="width: 14px; height: 14px;"></i> Google
-            </a>
-            <a href="https://yandex.com/maps/?text=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="loc-btn">
-              <i data-lucide="map" style="width: 14px; height: 14px;"></i> Yandex
-            </a>
-          </div>
-        </div>
-
-        <!-- Signature Menu Showcase (Cleaned Real Photography & Localized Tabs) -->
-        <div class="glass-card card-menu-showcase">
-          <div class="section-title-row">
-            <div class="section-heading">
-              <i data-lucide="sparkles" style="width: 18px; height: 18px; color: var(--brand-yellow);"></i>
-              <span data-i18n="specialsHeading">Mashhur taomlar</span>
-            </div>
-            <span class="section-tag" data-i18n="specialsTag">Har kuni yangi</span>
-          </div>
-
-          <div class="menu-tabs-nav" id="menu-tabs">
-            <button class="menu-tab-chip active" data-item="pepperoni" data-i18n="tabPepperoni">Pepperoni pitsa</button>
-            <button class="menu-tab-chip" data-item="burger" data-i18n="tabBurger">Smash Burger</button>
-            <button class="menu-tab-chip" data-item="strips" data-i18n="tabStrips">Tovuq stripslari</button>
-            <button class="menu-tab-chip" data-item="cheesepull" data-i18n="tabCheesepull">Pishloqli pitsa</button>
-          </div>
-
-          <div class="menu-item-display" id="menu-display-card">
-            <div class="menu-image-frame">
-              <img id="menu-img" src="/assets/pizza-pepperoni.jpg" alt="Pepperoni Pizza" class="menu-img" />
-            </div>
-            <div class="menu-item-info">
-              <div class="menu-item-name" id="menu-title">New York Pepperoni pitsa</div>
-              <div class="menu-item-desc" id="menu-desc">Qisirlovchi mol go'shti pepperonisi, erigan mozzarella pishlog'i va yog'och pechda pishirilgan xushbo'y pomidor sousli xamir.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Working Hours & Schedule Card -->
-        <div class="glass-card card-schedule">
-          <div class="section-title-row">
-            <div class="section-heading">
-              <i data-lucide="clock" style="width: 18px; height: 18px; color: var(--brand-yellow);"></i>
-              <span data-i18n="hoursHeading">Ish tartibi</span>
-            </div>
-            <span class="section-tag" id="badge-open-state" data-i18n="hoursTag">Har kuni</span>
-          </div>
-          
-          <div class="schedule-row">
-            <span class="schedule-day" data-i18n="hoursDays">Dushanba – Yakshanba</span>
-            <span class="schedule-time" data-i18n="hoursTime">10:00 – 01:00</span>
-          </div>
-          <div class="schedule-row">
-            <span class="schedule-day" data-i18n="hoursDelivery">Yetkazib berish xizmati</span>
-            <span class="schedule-time" data-i18n="hoursDeliveryTime">01:00 gacha uzluksiz</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. Designed Footer -->
-      <footer class="brand-footer">
-        <div class="brand-footer-name" data-i18n="footerName">YOLLA PIZZA · EST. NAMANGAN</div>
-        <p data-i18n="footerDesc">New York uslubidagi pitsa, burgerlar va mazali taomlar</p>
-      </footer>
-    </main>
-
-    <!-- 6. Sticky Bottom Quick Bar -->
-    <nav class="sticky-quick-bar" aria-label="Quick Actions">
-      <a href="tel:+998692395100" class="quick-bar-btn" title="Call Pizza Bar">
-        <i data-lucide="phone" style="width: 19px; height: 19px;"></i>
-        <span data-i18n="barCall">Qo'ng'iroq</span>
+  <!-- Discreet Floating Conversion Bar -->
+  <div class="sticky-dock" id="sticky-dock" role="region" aria-label="Quick order bar">
+    <div class="sticky-dock-inner">
+      <a href="tel:+998692395100" class="dock-call">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span data-i18n="dock_call">Qo'ng'iroq</span>
       </a>
-      <a href="https://t.me/birzoombot" target="_blank" rel="noopener noreferrer" class="quick-bar-btn prominent" title="Telegram Bot">
-        <i data-lucide="send" style="width: 18px; height: 18px;"></i>
-        <span data-i18n="barBot">Buyurtma</span>
-      </a>
-      <a href="https://maps.google.com/?q=Namangan+5A/6+mikr-on+Yolla+Pizza" target="_blank" rel="noopener noreferrer" class="quick-bar-btn" title="Directions">
-        <i data-lucide="map-pin" style="width: 19px; height: 19px;"></i>
-        <span data-i18n="barMap">Xarita</span>
-      </a>
-      <a href="https://www.instagram.com/yollapizza/#" target="_blank" rel="noopener noreferrer" class="quick-bar-btn" title="Instagram">
-        <i data-lucide="instagram" style="width: 19px; height: 19px;"></i>
-        <span data-i18n="barInsta">Insta</span>
-      </a>
-      <button class="quick-bar-btn" id="btn-spin-bar" title="Spin 3D Pizza">
-        <i data-lucide="pizza" style="width: 19px; height: 19px;"></i>
-        <span data-i18n="bar3D">3D Pitsa</span>
-      </button>
-    </nav>
 
-    <!-- 7. Toast Notification -->
-    <div id="toast" class="toast-notice">
-      <i data-lucide="check-circle" style="width: 16px; height: 16px; color: var(--brand-yellow);"></i>
-      <span id="toast-text">Manzil nusxalandi!</span>
+      <a
+        href="https://t.me/birzoombot"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dock-order"
+      >
+        <span data-i18n="dock_order">Telegram orqali buyurtma</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
     </div>
+  </div>
 
-    <!-- Main Logic Script -->
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <!-- Toast Feedback for Clipboard Copy -->
+  <div class="toast-notice" id="toast" role="status" aria-live="polite" hidden>
+    <span id="toast-text" data-i18n="toast_copied">Manzil nusxalandi</span>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>

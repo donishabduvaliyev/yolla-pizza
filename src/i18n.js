@@ -1,6 +1,6 @@
 export const translations = {
   uz: {
-    brandSubtitle: "NEW YORK USLUBIDAGI PITSA VA BURGERLAR",
+    brandSubtitle: "AMERIKA USLUBIDAGI PITSA VA BURGERLAR",
     statusOpen: "OCHIQ · OSHXONA ISHLAMOQDA (01:00 GACHA)",
     statusClosed: "HOZIRCHA YOPIQ · 10:00 DA OCHILADI",
     statusOpenDaily: "HAR KUNI OCHIQ · 10:00 DAN 01:00 GACHA",
@@ -46,7 +46,7 @@ export const translations = {
     toastPeace: "✌️ Yolla Pizza — Haqiqiy lazzat!"
   },
   ru: {
-    brandSubtitle: "ПИЦЦА И БУРГЕРЫ В СТИЛЕ НЬЮ-ЙОРК",
+    brandSubtitle: "ПИЦЦА И БУРГЕРЫ В СТИЛЕ АМЕРИКИ",
     statusOpen: "ОТКРЫТО · КУХНЯ РАБОТАЕТ (ДО 01:00)",
     statusClosed: "СЕЙЧАС ЗАКРЫТО · ОТКРОЕТСЯ В 10:00",
     statusOpenDaily: "ОТКРЫТО ЕЖЕДНЕВНО · С 10:00 ДО 01:00",
@@ -92,7 +92,7 @@ export const translations = {
     toastPeace: "✌️ Yolla Pizza — Настоящее удовольствие!"
   },
   en: {
-    brandSubtitle: "NEW YORK STYLE PIZZA & BURGER",
+    brandSubtitle: "AMERICAN STYLE PIZZA & BURGER",
     statusOpen: "OPEN NOW · KITCHEN ACTIVE (TILL 01:00 AM)",
     statusClosed: "CURRENTLY CLOSED · OPENS AT 10:00 AM",
     statusOpenDaily: "OPEN DAILY · 10:00 AM – 01:00 AM",
@@ -142,13 +142,13 @@ export const translations = {
 export const menuTranslations = {
   uz: {
     pepperoni: {
-      title: "New York Pepperoni pitsa",
-      desc: "Qisirlovchi mol go'shti pepperonisi, erigan mozzarella pishlog'i va yog'och pechda pishirilgan xushbo'y pomidor sousli xamir.",
+      title: "AMERIKANCHA Pepperoni pitsa",
+      desc: "Qisirlovchi mol go'shti pepperonisi, erigan mozzarella pishlog'i va ITALIYANCHA pechda pishirilgan xushbo'y pomidor sousli xamir.",
       img: "/assets/pizza-pepperoni.jpg"
     },
     burger: {
       title: "Yolla Smash Burger",
-      desc: "Yumshoq briosh noni, qovurilgan suvli mol go'shti kotleti, erigan cheddar pishlog'i, karamellangan piyoz va maxsus uy sousi.",
+      desc: "Yumshoq briosh noni, qovurilgan suvli mol go'shti kotleti, erigan cheddar pishlog'i, karamellangan piyoz va maxsus sousi.",
       img: "/assets/burger-clean.jpg"
     },
     strips: {
@@ -164,8 +164,8 @@ export const menuTranslations = {
   },
   ru: {
     pepperoni: {
-      title: "Нью-Йорк Пепперони пицца",
-      desc: "Хрустящие кусочки пепперони из говядины, горячая тягучая моцарелла и фирменный соус на ароматном тесте.",
+      title: "Американская Пепперони пицца",
+      desc: "Хрустящие кусочки пепперони из говядины, тягучая моцарелла и ароматное тесто с томатным соусом, запечённое в итальянской печи.",
       img: "/assets/pizza-pepperoni.jpg"
     },
     burger: {
@@ -186,8 +186,8 @@ export const menuTranslations = {
   },
   en: {
     pepperoni: {
-      title: "New York Pepperoni Pizza",
-      desc: "Crispy cupped beef pepperoni, gooey melted mozzarella cheese, and rich artisanal tomato sauce on wood-fired crust.",
+      title: "American Pepperoni Pizza",
+      desc: "Crispy cupped beef pepperoni, gooey mozzarella, and fragrant tomato-sauce dough baked in an Italian oven.",
       img: "/assets/pizza-pepperoni.jpg"
     },
     burger: {
